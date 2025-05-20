@@ -1,3 +1,20 @@
+drop table Pessoas cascade constraints;
+drop table Usuarios cascade constraints;
+drop table Atores cascade constraints;
+drop table Diretores cascade constraints;
+drop table Listas cascade constraints;
+drop table Conteudos cascade constraints;
+drop table Series cascade constraints;
+drop table Filmes cascade constraints;
+drop table Temporadas cascade constraints;
+drop table Episodios cascade constraints;
+drop table Plataformas cascade constraints;
+drop table Generos cascade constraints;
+drop table segue cascade constraints;
+drop table contem cascade constraints;
+drop table participa cascade constraints;
+drop table disponiboliza cascade constraints;
+drop table de cascade constraints;
 
 create table Pessoas (
   idP number (11,0),
