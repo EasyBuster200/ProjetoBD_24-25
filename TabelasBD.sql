@@ -20,7 +20,7 @@ create table Pessoas (
   idP number (11,0),
   nome varchar2(30),
   primary key (idP)
-)
+);
 
 create table Usuarios (
   idU number (11,0),
@@ -28,26 +28,26 @@ create table Usuarios (
   emailUsr varchar2 (50),
   primary key (idU),
   foreign key (idU) references Pessoas(idP) on delete cascade
-)
+);
 
 create table Atores(
   idA number (11,0),
   primary key (idA),
   foreign key (idA) references Pessoas(idP) on delete cascade
-)
+);
 
 create table Diretores (
   idD number (11,0),
   primary key (idD),
   foreign key (idD) references Pessoas(idP) on delete cascade
-)
+);
 
 create table Listas (
   nomeL varchar2 (30),
   idU number (11,0),
-  primary key (nomeL, idP),
+  primary key (nomeL, idU),
   foreign key (idU) references Usuarios(idU)
-)
+);
 
 create table Conteudos(
   idCont number(11,0),
@@ -57,27 +57,27 @@ create table Conteudos(
   idD number(11,0),
   primary key (idCont),
   foreign key (idD) references Diretores(idD)
-)
+);
 
 create table Series (
   idCont number(11,0),
   primary key(idCont),
   foreign key (idCont) references Conteudos(idCont) on delete cascade
-)
+);
 
 create table Filmes (
   idCont number(11,0),
   duração number(3),
   primary key (idCont),
   foreign key (idCont) references Conteudos(idCont) on delete cascade
-)
+);
 
 create table Temporadas (
   numTemp number (2),
   idCont number (11,0),
   primary key (numTemp, idCont),
   foreign key (idCont) references Series(idCont) on delete cascade
-)
+);
 
 create table Episodios (
   numEp number(3),
@@ -87,26 +87,26 @@ create table Episodios (
   duracao number(2),
   primary key (idCont, numTemp, numEp),
   foreign key (idCont, numTemp) references Temporadas(idCont, numTemp) on delete cascade
-)
+);
 
 create table Plataformas(
   idPlat number(5,0),
   nomePlat varchar2 (30),
   primary key (idPlat)
-)
+);
 
 create table Generos (
   genero varchar(50),
   primary key (genero)
-)
+);
 
 create table segue (
   idU number (11,0),
   idP number (11,0),
   primary key (idU, idP),
-  foreign key (idU) references Utilizadores(idU),
+  foreign key (idU) references Usuarios(idU),
   foreign key (idP) references Pessoas(idP)
-)
+);
 
 create table contem (
   idU number (11,0),
@@ -115,7 +115,7 @@ create table contem (
   primary key (idU, nomeL, idCont),
   foreign key (idU, nomeL) references Listas(idU, NomeL) on delete cascade,
   foreign key (idCont) references Conteudos(idCont) on delete cascade
-)
+);
 
 create table participa (
   idCont number(11,0), 
@@ -123,7 +123,7 @@ create table participa (
   primary key (idCont, idA),
   foreign key (idCont) references Conteudos(idCont) on delete cascade,
   foreign key (idA) references Atores(idA) on delete cascade
-)
+);
 
 create table disponiboliza (
   idPlat number(5,0),
@@ -131,7 +131,7 @@ create table disponiboliza (
   primary key (idPlat, idCont),
   foreign key (idPlat) references Plataformas(idPlat) on delete cascade,
   foreign key (idCont) references Conteudos(idCont) on delete cascade
-)
+);
 
 create table de (
   idCont number(11,0),
@@ -139,4 +139,6 @@ create table de (
   primary key (idCont, genero),
   foreign key (idCont) references Conteudos(idCont) on delete cascade,
   foreign key (genero) references Generos(genero)
-)
+);
+
+--TODO: Create Sequences

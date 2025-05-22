@@ -46,7 +46,7 @@ BEGIN
     RAISE_APPLICATION_ERROR(-20100, 'A person cannot be both Ator and Usuario');
   END IF;
 
-  SELECT count(*) into v_cov_count from Diretores where idD = :new.idA;
+  SELECT count(*) into v_count from Diretores where idD = :new.idA;
   IF v_count > 0 THEN
     RAISE_APPLICATION_ERROR (-20100, 'A person cannot be both Ator and Diretor');
   END IF;
@@ -65,7 +65,7 @@ BEGIN
     RAISE_APPLICATION_ERROR(-20100, 'A person cannot be both Diretor and Usuario');
   END IF;
 
-  SELECT count(*) into v_cov_count from Atores where idA = :new.idD;
+  SELECT count(*) into v_count from Atores where idA = :new.idD;
   IF v_count > 0 THEN
     RAISE_APPLICATION_ERROR (-20100, 'A person cannot be both Diretor and Ator');
   END IF;
