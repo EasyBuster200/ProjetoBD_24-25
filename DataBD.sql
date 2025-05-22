@@ -1,3 +1,21 @@
+delete from Pessoas;
+delete from Usuarios;
+delete from Atores;
+delete from Diretores;
+delete from Listas;
+delete from Conteudos;
+delete from Plataformas;
+delete from Generos;
+delete from Series;
+delete from Filmes;
+delete from Temporadas;
+delete from Episodios;
+delete from contem;
+delete from segue;
+delete from de;
+delete from participa;
+delete from disponiboliza;
+
 insert all
   --Usuarios
   into Pessoas values (00000000001, 'Seth Piddick')
@@ -402,31 +420,31 @@ insert all
 select * from dual;
 
 insert all 
-  into Segue values (00000000020, 00000000016)
-  into Segue values (00000000023, 00000000032)
-  into Segue values (00000000016, 00000000004)
-  into Segue values (00000000022, 00000000048)
-  into Segue values (00000000003, 00000000010)
-  into Segue values (00000000025, 00000000039)
-  into Segue values (00000000023, 00000000017)
-  into Segue values (00000000005, 00000000032)
-  into Segue values (00000000023, 00000000003)
-  into Segue values (00000000011, 00000000050)
-  into Segue values (00000000024, 00000000015)
-  into Segue values (00000000020, 00000000041)
-  into Segue values (00000000002, 00000000010)
-  into Segue values (00000000013, 00000000002)
-  into Segue values (00000000001, 00000000045)
-  into Segue values (00000000025, 00000000038)
-  into Segue values (00000000003, 00000000020)
-  into Segue values (00000000016, 00000000041)
-  into Segue values (00000000015, 00000000009)
-  into Segue values (00000000009, 00000000015)
-  into Segue values (00000000010, 00000000005)
-  into Segue values (00000000020, 00000000042)
-  into Segue values (00000000016, 00000000026)
-  into Segue values (00000000003, 00000000036)
-  into Segue values (00000000022, 00000000044)
+  into segue values (00000000020, 00000000016)
+  into segue values (00000000023, 00000000032)
+  into segue values (00000000016, 00000000004)
+  into segue values (00000000022, 00000000048)
+  into segue values (00000000003, 00000000010)
+  into segue values (00000000025, 00000000039)
+  into segue values (00000000023, 00000000017)
+  into segue values (00000000005, 00000000032)
+  into segue values (00000000023, 00000000003)
+  into segue values (00000000011, 00000000050)
+  into segue values (00000000024, 00000000015)
+  into segue values (00000000020, 00000000041)
+  into segue values (00000000002, 00000000010)
+  into segue values (00000000013, 00000000002)
+  into segue values (00000000001, 00000000045)
+  into segue values (00000000025, 00000000038)
+  into segue values (00000000003, 00000000020)
+  into segue values (00000000016, 00000000041)
+  into segue values (00000000015, 00000000009)
+  into segue values (00000000009, 00000000015)
+  into segue values (00000000010, 00000000005)
+  into segue values (00000000020, 00000000042)
+  into segue values (00000000016, 00000000026)
+  into segue values (00000000003, 00000000036)
+  into segue values (00000000022, 00000000044)
 select * from dual;
 
 insert all  
@@ -472,7 +490,7 @@ insert all
   into contem values (00000000011, 'Thriller Zone', 00000000020)
 select * from dual;
 
-insert all --? Should we add more
+insert all 
   into Plataformas values (00001, 'Netflix')
   into Plataformas values (00002, 'Amazon Prime Video')
   into Plataformas values (00003, 'Disney+')
