@@ -3,7 +3,6 @@
 --? Como garatir que na inserção relações que são obrigatorias são tambem inseridas
 --? Vale a pena criar triggers que ao remover um diretor remove tambem todos os conteudos que este dirigiu
 --? Podemos usar on delete cascade para foreign keys 
---? Vale a pena garatir que Action e action não podem ambos estar registrados.
 
 -- Trigger que antes de inserir um tuplo na tabela segue verifica que os ids são diferentes, ou seja não permite que alguem se siga a si próprio.  
 CREATE OR REPLACE TRIGGER prevent_self_follow

@@ -27,19 +27,19 @@ create table Usuarios (
   dataNascimento DATE,
   emailUsr varchar2 (50),
   primary key (idU),
-  foreign key (idU) references Pessoas(idP)
+  foreign key (idU) references Pessoas(idP) on delete cascade
 )
 
 create table Atores(
   idA number (11,0),
   primary key (idA),
-  foreign key (idA) references Pessoas(idP)
+  foreign key (idA) references Pessoas(idP) on delete cascade
 )
 
 create table Diretores (
   idD number (11,0),
   primary key (idD),
-  foreign key (idD) references Pessoas(idP)
+  foreign key (idD) references Pessoas(idP) on delete cascade
 )
 
 create table Listas (
@@ -62,22 +62,21 @@ create table Conteudos(
 create table Series (
   idCont number(11,0),
   primary key(idCont),
-  foreign key (idCont) references Conteudos(idCont)
+  foreign key (idCont) references Conteudos(idCont) on delete cascade
 )
 
---! make a trigger that when creating a movie and or series it auto registers it in the conteudos table
 create table Filmes (
   idCont number(11,0),
   duração number(3),
   primary key (idCont),
-  foreign key (idCont) references Conteudos(idCont)
+  foreign key (idCont) references Conteudos(idCont) on delete cascade
 )
 
 create table Temporadas (
   numTemp number (2),
   idCont number (11,0),
   primary key (numTemp, idCont),
-  foreign key (idCont) references Conteudos(idCont)
+  foreign key (idCont) references Series(idCont) on delete cascade
 )
 
 create table Episodios (
@@ -87,7 +86,7 @@ create table Episodios (
   tituloEp varchar(30),
   duracao number(2),
   primary key (idCont, numTemp, numEp),
-  foreign key (idCont, numTemp) references Temporadas(idCont, numTemp) --? Is this ok?
+  foreign key (idCont, numTemp) references Temporadas(idCont, numTemp) on delete cascade
 )
 
 create table Plataformas(
@@ -114,30 +113,30 @@ create table contem (
   nomeL varchar2 (30),
   idCont number (11,0),
   primary key (idU, nomeL, idCont),
-  foreign key (idU, nomeL) references Listas (idU, NomeL),
-  foreign key (idCont) references Conteudos (idCont)
+  foreign key (idU, nomeL) references Listas(idU, NomeL) on delete cascade,
+  foreign key (idCont) references Conteudos(idCont) on delete cascade
 )
 
 create table participa (
   idCont number(11,0), 
   idA number(11,0),
   primary key (idCont, idA),
-  foreign key (idCont) references Conteudos(idCont),
-  foreign key (idA) references Atores(idA)
+  foreign key (idCont) references Conteudos(idCont) on delete cascade,
+  foreign key (idA) references Atores(idA) on delete cascade
 )
 
 create table disponiboliza (
   idPlat number(5,0),
   idCont number (11,0),
   primary key (idPlat, idCont),
-  foreign key (idPlat) references Plataformas(idPlat),
-  foreign key (idCont) references Conteudos(idCont)
+  foreign key (idPlat) references Plataformas(idPlat) on delete cascade,
+  foreign key (idCont) references Conteudos(idCont) on delete cascade
 )
 
 create table de (
   idCont number(11,0),
   genero varchar2 (30),
   primary key (idCont, genero),
-  foreign key (idCont) references Conteudos(idCont),
+  foreign key (idCont) references Conteudos(idCont) on delete cascade,
   foreign key (genero) references Generos(genero)
 )
