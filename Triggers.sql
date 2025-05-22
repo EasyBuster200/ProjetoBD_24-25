@@ -5,8 +5,7 @@
 --? Podemos usar on delete cascade para foreign keys 
 --? Vale a pena garatir que Action e action não podem ambos estar registrados.
 
--- Simples trigger que antes de inserir um par de ids de Pessoas na tabela segue 
--- verifica que os ids são diferentes, ou seja não permite que alguem se siga a si próprio  
+-- Trigger que antes de inserir um tuplo na tabela segue verifica que os ids são diferentes, ou seja não permite que alguem se siga a si próprio.  
 CREATE OR REPLACE TRIGGER prevent_self_follow
 BEFORE INSERT ON segue
 FOR EACH ROW
@@ -18,7 +17,6 @@ END;
 /
 
 --Trigger que garante que antes de inserir um tuplo na tabela de USuarios o seu id não está jã registrado
---TODO: Same para atores e diretores
 CREATE OR REPLACE TRIGGER trg_check_disjoint_Pessoas
 BEFORE INSERT ON Usuarios
 FOR EACH ROW
