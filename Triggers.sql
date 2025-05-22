@@ -17,7 +17,7 @@ BEGIN
 END;
 /
 
---Trigger que garante que um tuplo da entidade Pessoas pertence a apenas uma das entidades (filho) do ISA
+--Trigger que garante que antes de inserir um tuplo na tabela de USuarios o seu id não está jã registrado
 --TODO: Same para atores e diretores
 CREATE OR REPLACE TRIGGER trg_check_disjoint_Pessoas
 BEFORE INSERT ON Usuarios
@@ -33,6 +33,44 @@ BEGIN
   SELECT COUNT(*) INTO v_count FROM Diretores WHERE idD = :NEW.idU;
   IF v_count > 0 THEN
     RAISE_APPLICATION_ERROR(-20003, 'A person cannot be both Usuario and Diretor.');
+  END IF;
+END;
+/
+
+--Trigger que garante que antes de inserir um tuplo na tabela de Atores o seu id não está jã registrado
+CREATE OR REPLACE TRIGGER trg_check_disjoint_Atores
+BEFORE INSERT ON Atores
+FOR EACH ROW 
+DECLARE 
+  v_count INTEGER;
+BEGIN
+  SELECT COUNT(*) INTO v_count FROM Usuarios WHERE idU = :new.idA;
+  IF v_count > 0 THEN
+    RAISE_APPLICATION_ERROR(-20100, 'A person cannot be both Ator and Usuario');
+  END IF;
+
+  SELECT count(*) into v_cov_count from Diretores where idD = :new.idA;
+  IF v_count > 0 THEN
+    RAISE_APPLICATION_ERROR (-20100, 'A person cannot be both Ator and Diretor');
+  END IF;
+END;
+/
+
+--Trigger que garante que antes de inserir um tuplo na tabela de Diretores o seu id não está jã registrado
+CREATE OR REPLACE TRIGGER trg_check_disjoint_Diretores
+BEFORE INSERT ON Diretores
+FOR EACH ROW 
+DECLARE 
+  v_count INTEGER;
+BEGIN
+  SELECT COUNT(*) INTO v_count FROM Usuarios WHERE idU = :new.idD;
+  IF v_count > 0 THEN
+    RAISE_APPLICATION_ERROR(-20100, 'A person cannot be both Diretor and Usuario');
+  END IF;
+
+  SELECT count(*) into v_cov_count from Atores where idA = :new.idD;
+  IF v_count > 0 THEN
+    RAISE_APPLICATION_ERROR (-20100, 'A person cannot be both Diretor and Ator');
   END IF;
 END;
 /
@@ -72,7 +110,7 @@ END;
 /
 
 --Trigger que verifiaca que a classificação de um conteudo não pode ser menos que 0.0 ou mais de 10.0
-CREATE OR REPLACE TRIGGER trg_valida_classificacao
+CREATE OR REPLACE TRIGGER trg_check_classificacao
 BEFORE INSERT OR UPDATE ON Conteudos
 FOR EACH ROW
 BEGIN
