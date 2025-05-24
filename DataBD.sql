@@ -162,26 +162,26 @@ select * from dual;
 
 insert all
   --Filmes
-  into Conteudos values (10000000001, 'A Cinderella Story: Once Upon a Song', 8.2, 'English', 10000000040)
-  into Conteudos values (10000000002, 'Why Dont You Play In Hell?', 9.7, 'Japanese', 10000000041)
-  into Conteudos values (10000000003, 'Thampu', 3.0, 'Malayalam', 10000000042)
-  into Conteudos values (10000000004, 'Exists', 8.6, 'English', 10000000043)
-  into Conteudos values (10000000005, 'Adventures of Elmo in Grouchland, The', 6.5, 'English', 10000000044)
-  into Conteudos values (10000000006, 'Ranma : Big Trouble in Nekonron, China', 3.5, 'Japanese', 10000000045)
-  into Conteudos values (10000000007, 'King Kelly', 5.7, 'English', 10000000046)
-  into Conteudos values (10000000008, 'Go Get Some Rosemary (Daddy Longlegs)', 3.8, 'English', 10000000047)
-  into Conteudos values (10000000009, 'Look Whos Talking Now', 8.7, 'English', 10000000048)
-  into Conteudos values (10000000010, 'Dawn Patrol', 9.4, 'English', 10000000049)
-  into Conteudos values (10000000011, 'Kill Theory', 1.6, 'English', 10000000050)
-  into Conteudos values (10000000012, 'Kickboxer 3: The Art of War', 5.5, 'English', 10000000040)
-  into Conteudos values (10000000013, 'Black Sheep', 5.7, 'English', 10000000041)
-  into Conteudos values (10000000014, 'Nine Dead', 7.7, 'English', 10000000042)
-  into Conteudos values (10000000015, 'Aquamarine', 2.3, 'English', 10000000043)
+  into Conteudos values (10000000001, 'FILME', 176,'A Cinderella Story: Once Upon a Song', 8.2, 'English', 10000000040)
+  into Conteudos values (10000000002, 'FILME', 180,'Why Dont You Play In Hell?', 9.7, 'Japanese', 10000000041)
+  into Conteudos values (10000000003, 'FILME', 136,'Thampu', 3.0, 'Malayalam', 10000000042)
+  into Conteudos values (10000000004, 'FILME', 185,'Exists', 8.6, 'English', 10000000043)
+  into Conteudos values (10000000005, 'FILME', 144,'Adventures of Elmo in Grouchland, The', 6.5, 'English', 10000000044)
+  into Conteudos values (10000000006, 'FILME', 194,'Ranma : Big Trouble in Nekonron, China', 3.5, 'Japanese', 10000000045)
+  into Conteudos values (10000000007, 'FILME', 139,'King Kelly', 5.7, 'English', 10000000046)
+  into Conteudos values (10000000008, 'FILME', 137,'Go Get Some Rosemary (Daddy Longlegs)', 3.8, 'English', 10000000047)
+  into Conteudos values (10000000009, 'FILME', 109,'Look Whos Talking Now', 8.7, 'English', 10000000048)
+  into Conteudos values (10000000010, 'FILME', 193,'Dawn Patrol', 9.4, 'English', 10000000049)
+  into Conteudos values (10000000011, 'FILME', 174,'Kill Theory', 1.6, 'English', 10000000050)
+  into Conteudos values (10000000012, 'FILME', 171,'Kickboxer 3: The Art of War', 5.5, 'English', 10000000040)
+  into Conteudos values (10000000013, 'FILME', 152,'Black Sheep', 5.7, 'English', 10000000041)
+  into Conteudos values (10000000014, 'FILME', 142,'Nine Dead', 7.7, 'English', 10000000042)
+  into Conteudos values (10000000015, 'FILME', 132,'Aquamarine', 2.3, 'English', 10000000043)
   --Series
-  into Conteudos values (10000000016, 'Breaking Bad', 9.5, 'English', 10000000040)
-  into Conteudos values (10000000017, 'Money Heist', 8.2, 'Spanish', 10000000041)
-  into Conteudos values (10000000018, 'Dark', 8.8, 'German', 10000000042)
-  into Conteudos values (10000000019, 'Squid Game', 8.0, 'Korean', 10000000043)
+  into Conteudos values (10000000016, 'SERIE', 657,'Breaking Bad', 9.5, 'English', 10000000040)
+  into Conteudos values (10000000017, 'SERIE', 695,'Money Heist', 8.2, 'Spanish', 10000000041)
+  into Conteudos values (10000000018, 'SERIE', 269,'Dark', 8.8, 'German', 10000000042)
+  into Conteudos values (10000000019, 'SERIE', 252,'Squid Game', 8.0, 'Korean', 10000000043)
 select * from dual; 
 
 INSERT all
@@ -192,21 +192,21 @@ INSERT all
 SELECT * FROM dual;
 
 INSERT ALL
-  INTO Filmes VALUES (10000000001, 176)
-  INTO Filmes VALUES (10000000002, 180) 
-  INTO Filmes VALUES (10000000003, 136)
-  INTO Filmes VALUES (10000000004, 185)
-  INTO Filmes VALUES (10000000005, 144)
-  INTO Filmes VALUES (10000000006, 194)
-  INTO Filmes VALUES (10000000007, 139)
-  INTO Filmes VALUES (10000000008, 137)
-  INTO Filmes VALUES (10000000009, 109)
-  INTO Filmes VALUES (10000000010, 193)
-  INTO Filmes VALUES (10000000011, 174)
-  INTO Filmes VALUES (10000000012, 171)
-  INTO Filmes VALUES (10000000013, 152)
-  INTO Filmes VALUES (10000000014, 142)
-  INTO Filmes VALUES (10000000015, 132)
+  INTO Filmes VALUES (10000000001)
+  INTO Filmes VALUES (10000000002) 
+  INTO Filmes VALUES (10000000003)
+  INTO Filmes VALUES (10000000004)
+  INTO Filmes VALUES (10000000005)
+  INTO Filmes VALUES (10000000006)
+  INTO Filmes VALUES (10000000007)
+  INTO Filmes VALUES (10000000008)
+  INTO Filmes VALUES (10000000009)
+  INTO Filmes VALUES (10000000010)
+  INTO Filmes VALUES (10000000011)
+  INTO Filmes VALUES (10000000012)
+  INTO Filmes VALUES (10000000013)
+  INTO Filmes VALUES (10000000014)
+  INTO Filmes VALUES (10000000015)
 SELECT * FROM dual;
 
 insert all
@@ -288,7 +288,6 @@ INSERT ALL
   into contem values (10000000011, 'Thriller Zone', 10000000019)
 SELECT * FROM dual;
 
-
 insert all 
   into Plataformas values (10001, 'Netflix')
   into Plataformas values (10002, 'Amazon Prime Video')
@@ -357,7 +356,6 @@ INSERT ALL
   into participa values (10000000017, 10000000036)
   into participa values (10000000013, 10000000038)
 SELECT * FROM dual;
-
 
 INSERT ALL
   INTO disponiboliza VALUES (10001, 10000000010)

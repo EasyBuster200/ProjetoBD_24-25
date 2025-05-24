@@ -51,6 +51,8 @@ create table Listas (
 
 create table Conteudos(
   idCont number(11,0),
+  tipo varchar2 (18), -- valores: "FILME" ou "SERIE"
+  duracao number (3), -- Para Filmes é a duração do filme, para Series é a soma da duração de todos os episodios 
   nomeCont varchar2(50),
   classificacao number (2,1),
   linguagem varchar(30),
@@ -67,7 +69,6 @@ create table Series (
 
 create table Filmes (
   idCont number(11,0),
-  duração number(3),
   primary key (idCont),
   foreign key (idCont) references Conteudos(idCont) on delete cascade
 );
@@ -84,7 +85,7 @@ create table Episodios (
   idCont number(11,0),
   numTemp number(2),
   tituloEp varchar(30),
-  duracao number(2),
+  duracaoEp number(2),
   primary key (idCont, numTemp, numEp),
   foreign key (idCont, numTemp) references Temporadas(idCont, numTemp) on delete cascade
 );
@@ -141,4 +142,6 @@ create table de (
   foreign key (genero) references Generos(genero)
 );
 
---TODO: Create Sequences
+--TODO: Maybe remove the view I made
+--TODO: Check everything that is in the actual BD, views, tables, triggers, sequences and make sure to get all the code for each of them
+--TODO: Para os dois reports interligados, podemos ao clicar em algo dos utilizadores ir para as suas listas, e dps ao clicar numa lista vamos para o conteudo dessa lista?

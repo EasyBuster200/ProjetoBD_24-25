@@ -116,3 +116,53 @@ BEGIN
   END IF;
 END;
 /
+
+CREATE or replace trigger id_Pessoa
+before insert on Pessoas
+For each row
+DECLARE 
+  id_Pessoa Number;
+Begin 
+  select seq_id_Pessoa.nextval
+    into id_Pessoa
+    from dual;
+  :new.idP := id_Pessoa;
+end;
+/
+
+Create or replace trigger id_cont
+before insert on Conteudos
+for each row
+declare 
+  id_cont Number;
+Begin
+  select seq_id_cont.nextval
+  into id_cont
+  FROM dual;
+  :new.idCont := id_cont;
+end;
+/
+
+CREATE or replace trigger id_Plat
+before insert on Plataformas
+for each row
+begin
+  select seq_id_Plat.nextval
+  into :new.idPlat
+  from dual;
+end;
+/
+
+CREATE OR REPLACE TRIGGER trg_after_insert_conteudos
+AFTER INSERT ON Conteudos
+FOR EACH ROW
+BEGIN
+  IF :NEW.tipo = 'SERIE' THEN
+    INSERT INTO Series (idCont) VALUES (:NEW.idCont);
+  ELSIF :NEW.tipo = 'FILME' THEN
+    INSERT INTO Filmes (idCont) VALUES (:NEW.idCont);
+  END IF;
+END;
+/
+
+--TODO: need more triggers like this I think
