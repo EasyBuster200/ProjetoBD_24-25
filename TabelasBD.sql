@@ -142,6 +142,5 @@ create table de (
   foreign key (genero) references Generos(genero)
 );
 
---TODO: Maybe remove the view I made
 --TODO: Check everything that is in the actual BD, views, tables, triggers, sequences and make sure to get all the code for each of them
---TODO: Para os dois reports interligados, podemos ao clicar em algo dos utilizadores ir para as suas listas, e dps ao clicar numa lista vamos para o conteudo dessa lista?
+--TODO: Finish the report.

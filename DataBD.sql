@@ -310,7 +310,7 @@ INSERT ALL
   into participa values (10000000013, 10000000035)
   into participa values (10000000016, 10000000036)
   into participa values (10000000011, 10000000037)
-  into participa values (10000000010, 10000000038) --
+  into participa values (10000000010, 10000000038) 
   into participa values (10000000017, 10000000039)
   into participa values (10000000001, 10000000038)
   into participa values (10000000002, 10000000039)
@@ -382,7 +382,7 @@ INSERT ALL
   INTO disponiboliza VALUES (10001, 10000000018)
   INTO disponiboliza VALUES (10006, 10000000019)
   INTO disponiboliza VALUES (10005, 10000000010)
-  INTO disponiboliza VALUES (10005, 10000000011)--
+  INTO disponiboliza VALUES (10005, 10000000011)
   INTO disponiboliza VALUES (10002, 10000000012)
   INTO disponiboliza VALUES (10005, 10000000013)
   INTO disponiboliza VALUES (10005, 10000000014)
@@ -398,7 +398,7 @@ INSERT ALL
   INTO disponiboliza VALUES (10006, 10000000010)
   INTO disponiboliza VALUES (10003, 10000000013)
   INTO disponiboliza VALUES (10001, 10000000015)
-  INTO disponiboliza VALUES (10002, 10000000017)--
+  INTO disponiboliza VALUES (10002, 10000000017)
   INTO disponiboliza VALUES (10006, 10000000013)
   INTO disponiboliza VALUES (10003, 10000000016)
   INTO disponiboliza VALUES (10006, 10000000003)
@@ -408,7 +408,7 @@ INSERT ALL
   INTO disponiboliza VALUES (10001, 10000000009)
   INTO disponiboliza VALUES (10003, 10000000014)
   INTO disponiboliza VALUES (10005, 10000000019)
-  INTO disponiboliza VALUES (10003, 10000000010)--
+  INTO disponiboliza VALUES (10003, 10000000010)
   INTO disponiboliza VALUES (10001, 10000000011)
   INTO disponiboliza VALUES (10005, 10000000015)
   INTO disponiboliza VALUES (10004, 10000000012)

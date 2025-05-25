@@ -1,8 +1,4 @@
---TODO: Change the error messages to PT
---? Perguntar como podemos garantir que ao inserir um tuplo na entidade Pai de um ISA ele automaticamente tem um filho, para os ISAs que são totais e disjuntos
---? Como garatir que na inserção relações que são obrigatorias são tambem inseridas
---? Vale a pena criar triggers que ao remover um diretor remove tambem todos os conteudos que este dirigiu
---? Podemos usar on delete cascade para foreign keys 
+--TODO: Change the error messages to PT 
 
 -- Trigger que antes de inserir um tuplo na tabela segue verifica que os ids são diferentes, ou seja não permite que alguem se siga a si próprio.  
 CREATE OR REPLACE TRIGGER prevent_self_follow
@@ -117,6 +113,7 @@ BEGIN
 END;
 /
 
+--Trigger que permite gerar um id de Pessoa ao inserir
 CREATE or replace trigger id_Pessoa
 before insert on Pessoas
 For each row
@@ -130,6 +127,7 @@ Begin
 end;
 /
 
+--Trigger que premite gerar um id de Conteudos ao inserir
 Create or replace trigger id_cont
 before insert on Conteudos
 for each row
@@ -143,6 +141,7 @@ Begin
 end;
 /
 
+--Trigger que permite gerar um id de Plataforma ao inserir
 CREATE or replace trigger id_Plat
 before insert on Plataformas
 for each row
@@ -153,6 +152,7 @@ begin
 end;
 /
 
+-- Trigger que automaticamente regista um Conteudo como Filme ou Serie dependendo do valor do atributo tipo de Contuedos
 CREATE OR REPLACE TRIGGER trg_after_insert_conteudos
 AFTER INSERT ON Conteudos
 FOR EACH ROW
@@ -164,5 +164,3 @@ BEGIN
   END IF;
 END;
 /
-
---TODO: need more triggers like this I think
