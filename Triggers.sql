@@ -20,12 +20,12 @@ DECLARE
 BEGIN
   SELECT COUNT(*) INTO v_count FROM Atores WHERE idA = :NEW.idU;
   IF v_count > 0 THEN
-    RAISE_APPLICATION_ERROR(-20002, 'A person cannot be both Usuario and Ator.');
+    RAISE_APPLICATION_ERROR(-20100, 'A person cannot be both Usuario and Ator.');
   END IF;
 
   SELECT COUNT(*) INTO v_count FROM Diretores WHERE idD = :NEW.idU;
   IF v_count > 0 THEN
-    RAISE_APPLICATION_ERROR(-20003, 'A person cannot be both Usuario and Diretor.');
+    RAISE_APPLICATION_ERROR(-20100, 'A person cannot be both Usuario and Diretor.');
   END IF;
 END;
 /
@@ -108,7 +108,7 @@ BEFORE INSERT OR UPDATE ON Conteudos
 FOR EACH ROW
 BEGIN
   IF :NEW.classificacao < 0.0 OR :NEW.classificacao > 10.0 THEN
-    RAISE_APPLICATION_ERROR(-20001, 'Classificacao must be between 0.0 and 10.0.');
+    RAISE_APPLICATION_ERROR(-20100, 'Classificacao must be between 0.0 and 10.0.');
   END IF;
 END;
 /
