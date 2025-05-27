@@ -1,5 +1,3 @@
---TODO: Change the error messages to PT 
-
 -- Trigger que antes de inserir um tuplo na tabela segue verifica que os ids são diferentes, ou seja não permite que alguem se siga a si próprio.  
 CREATE OR REPLACE TRIGGER prevent_self_follow
 BEFORE INSERT ON segue
@@ -164,3 +162,17 @@ BEGIN
   END IF;
 END;
 /
+
+-- Trigger que automaticamente atualiza o valor de duração para a série em que foi adicionado um episodio
+CREATE OR REPLACE TRIGGER trg_update_duracao_on_update
+AFTER UPDATE ON Episodios
+FOR EACH ROW
+BEGIN
+  UPDATE Conteudos
+  SET duracao = (
+    SELECT SUM(duracaoEp)
+    FROM Episodios
+    WHERE idCont = :NEW.idCont
+  )
+  WHERE idCont = :NEW.idCont;
+END;

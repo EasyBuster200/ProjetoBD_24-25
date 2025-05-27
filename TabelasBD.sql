@@ -141,6 +141,3 @@ create table de (
   foreign key (idCont) references Conteudos(idCont) on delete cascade,
   foreign key (genero) references Generos(genero)
 );
-
---TODO: Check everything that is in the actual BD, views, tables, triggers, sequences and make sure to get all the code for each of them
---TODO: Finish the report.
