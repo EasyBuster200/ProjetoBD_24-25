@@ -42,6 +42,7 @@
 | `Phase1_Report.pdf`          | Full report for Phase 1, including models and planned queries.                  |
 | `BD17-Stremio-SQL.sql`       | SQL script containing all `CREATE TABLE`, constraints, and `INSERT` statements. |
 | `BD17-Stremio-APEX.sql`      | Exported Oracle APEX application file for deployment or review.                 |
+| `BDG17-Stremio-FASE1.pdf`    | First project report for Phase 1                                                |
 | `BDG17-Stremio-Relatorio.pdf`| Final project report for Phase 2, including implementation details.             |
 | `Consultas.sql`              | Final SQL queries for the necessary "interresting queries" in the project       |
 
